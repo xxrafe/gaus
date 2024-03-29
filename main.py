@@ -10,9 +10,7 @@ def add_gaussian_noise(input_folder, output_folder):
 
     # Iterate over all files in the input folder
     for filename in os.listdir(input_folder):
-        # Check if the file is an image
-        if filename.endswith(".bmp") or filename.endswith(".png"):
-            # Load the image
+        if filename.endswith(".bmp"):
             img = cv2.imread(os.path.join(input_folder, filename))
 
             # Add Gaussian noise
@@ -38,8 +36,7 @@ def add_gaussian_noise(input_folder, output_folder):
             cv2.imwrite(os.path.join(output_folder, filename), noisy_image)
 
 
-# Call the function with the input and output folders
+
 add_gaussian_noise("input_folder", "output_folder")
 
-# Print a success message
 print("Images in the input folder were successfully processed and saved to the output folder.")
